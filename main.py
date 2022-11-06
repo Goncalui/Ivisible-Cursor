@@ -56,6 +56,10 @@ while running:
                 if( np.sqrt((mousePos[0]-center[0])**2 +(mousePos[1]-center[1])**2)< radius-7 ):
                     tela = 2
                     points.Clear()
+                    circle1.gameOver()
+                    circle2.gameOver()
+                    circle3.gameOver()
+                    counter = 0
                     print('click')
                     
             elif tela == 2:

@@ -21,7 +21,9 @@ class Dish:
             self.center = [random.randint(self.radius,self.screen.get_width() - self.radius),random.randint(self.radius,self.screen.get_height() - self.radius)]
             return True
         else:
-            return False 
+            return False
+    def gameOver(self, radius = 200):
+        self.radius = radius 
 
 class Points:
     def __init__(self):
