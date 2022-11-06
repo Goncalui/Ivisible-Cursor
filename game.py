@@ -2,6 +2,7 @@ import pygame
 import random
 
 
+
 circulo1, circulo2, circulo3 = [None, None, None]
 
 def plotCircle(screen,tamanho):
@@ -14,7 +15,7 @@ def plotCircle(screen,tamanho):
     
     return [w,h]
 
-def game(x,y):
+def game(screen,x,y):
     global circulo1, circulo2, circulo3
     if circulo1 == None:
         circulo1 = plotCircle(screen, 130)
@@ -24,8 +25,6 @@ def game(x,y):
         circulo3 = plotCircle(screen, 130)
 def checkColision(mouse):
     global circulo1, circulo2, circulo3
-    
-    if 
-    
+    circulo1 =0
     
         
