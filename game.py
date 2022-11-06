@@ -22,7 +22,16 @@ class Dish:
             pygame.draw.circle(self.screen,(255,0,0), [x,y], 10)  
             return True
         else:
-            return False  
+            return False 
+
+
+class MouseElipse:
+    def __init__(self,screen, x,y, color = (255,0,0)):
+        self.screen = screen
+        self.x = x
+        self.y = y
+        self.color = color
+    def plotME(self,x,y):
         
     
         
