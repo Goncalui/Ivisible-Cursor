@@ -17,7 +17,7 @@ rectSize2 = rectSize/4
 screenWidth = screen.get_width()
 
 tela = 0
-fps = 144
+fps = 30
 
 
 clock = pygame.time.Clock()
@@ -30,14 +30,12 @@ screen.fill((0,0,0))# SET_VISIBLE of cursor to False
 
 circle1, circle2, circle3 = [game.Dish(screen), game.Dish(screen), game.Dish(screen)]
 
-
 while running:    
     x = -1
     y = -1
     
     screen.fill((255,255,255))
 
-    
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -49,7 +47,7 @@ while running:
             radius = int((- playStartPos[0][0] + playStartPos[0][1] )/2)
             center =  [playStartPos[0][0]+radius,playStartPos[1][0]+radius]
             if( np.sqrt((mousePos[0]-center[0])**2 +(mousePos[1]-center[1])**2)< radius-7 ):
-                tela = 2
+                tela = 1
                 pygame.mouse.set_visible(False)
     
     if(tela == 0):
@@ -57,9 +55,13 @@ while running:
     elif(tela == 1):
         #game# SET_VISIBLE of cursor to False
         pygame.mouse.set_visible(False) 
-        circle1.plotDish(x,y)
-        circle2.plotDish(x,y)
-        circle3.plotDish(x,y)
+
+        if(circle1.plotDish(x,y)):
+            print('s')
+        if(circle2.plotDish(x,y)):
+            print('s')
+        if(circle3.plotDish(x,y)):
+            print('s')
     else:
         print('game over')
     
