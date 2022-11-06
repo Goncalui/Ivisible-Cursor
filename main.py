@@ -1,9 +1,13 @@
 import math
 import pygame
+import game
+
 
 pygame.init()
 
-screen = pygame.display.set_mode([1200,800]) #16x9
+screen_size = [1200,800] # sempre par
+center = [screen_size[0]/2,screen_size[1]/2]
+screen = pygame.display.set_mode(screen_size) #16x9
 
 running = True
 
@@ -12,21 +16,25 @@ rectSize2 = rectSize/4
 screenWidth = screen.get_width()
 
 tela = 0
-atuali = 144
+fps = 2
 
+clock = pygame.time.Clock()
+
+
+screen.fill((0,0,0))
 while running:
-    atuali+=1
+    x = pygame.mouse.get_pos()[0]
+    y = pygame.mouse.get_pos()[1]
+    
+    game.game(screen)
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.MOUSEBUTTONUP:
-            print('clicked')
-
-    x = pygame.mouse.get_pos()[0]
-    y = pygame.mouse.get_pos()[1]
-
-    screen.fill((255,255,255))
-
+            print('click')
+            
     pygame.display.flip()
+    clock.tick(fps)
 
 pygame.quit()
